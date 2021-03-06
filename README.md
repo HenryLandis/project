@@ -1,4 +1,4 @@
-# sproc
+# sproc (SPecies Range Overlap Calculator)
 
 ``sproc`` is a Python package with the objective of visualizing and quantifying the overlap between the ranges of two taxa as determined by latitude/longitude occurrence data.
 
