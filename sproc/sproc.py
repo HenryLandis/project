@@ -4,36 +4,8 @@ from pygbif import species
 from pygbif import occurrences as occ
 import numpy as np
 import os
+import pandas as pd
 
-"""
-For now: using this space to note things that might be useful.
-
-PACKAGES:
-pygbif, specifically import occ and species to get useful queries.  Start with only getting species name and lat/lon range.
-geopandas (and its dependencies) do all the plotting.
-
-CLASS OBJECTS:
-Start with one central object for querying gbif and saving data.  Ideally a single run() function can handle stuff.
-The API will place a limit on simultaneous queries, so I'll need to use the cycling trick to get however many (300?) at a time.
-The data that should be saved are a list of lat/lon.
-
-I don't expect to use Maxent at this time, so I don't need to do reformatting to account for that.  geopandas is another story,
-but of course I plan to use that quite a bit.
-
-FUNCTIONS:
-In a utils.py folder, build mapping functions.  pyplot.hexbin and pyplot.hist2d can do hex and squared binning respectively.
-KDE may be useful visually but not quantitatively.
-
-Quantifying overlap is different than qualitatively visualizing it.  Within geopandas, the centrography packagage can compute
-convex hulls, and the descartes.PolygonPatch class object does alpha shapes.  gbif coordinates plus projection are needed:
-use WGS84 (EPSG: 4326) because the gbif data uses that.
-geopandas.overlay() does the geometry that I expect to calculate the final values (intersection).  Hopefully it takes two
-convex hulls or alpha shapes as arguments, if not some transforming may be necessary.  All of this should be wrapped in a 
-single "get overlay" function.
-
-Is it also possible to overlay hex/square bin maps, and quantify that in a meaningful way?
-
-"""
 
 class Sproc:
     """
@@ -114,8 +86,17 @@ class Sproc:
             # Print a dot on each cycle to show progress.
             print(".", end = "")
 
-            # When end of data is reached, print length of final results.
+            # When end of data is reached: build pandas dataframe from lists and remove duplicate data points.
             if occ_records['endOfRecords']:
+                df = pd.DataFrame({'Latitude': self.lats, 'Longitude': self.lons})
+                df = df.drop_duplicates().reset_index()
+                df = df.drop('index', axis = 1)
+
+                # Reform the lists by subsetting the dataframe.
+                self.lats = list(df['Latitude'])
+                self.lons = list(df['Longitude'])
+
+                # Print final number of records.
                 print(f' Found {len(self.lats)} records.')
 
         # Build array to write to CSV file.  np.vstack layers arrays vertically, where each layer is species-lat-lon.  
