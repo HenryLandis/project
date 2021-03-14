@@ -25,7 +25,8 @@ class Sproc:
         # Create a dict object to store parameters for gbif query.
         self.params = {}
 
-        # Build dict.  Include params if provided, otherwise set as None.
+        # Build dict.  Include params if provided, otherwise set as None.  
+        # TODO: add elevation? Do enough entries have that?
         if sp_name:
             self.params['spname'] = sp_name
         else:
@@ -67,7 +68,7 @@ class Sproc:
         self.lats = []
         self.lons = []
 
-        # Run a while-loop to go through all observations.  TODO: ignore duplicates.
+        # Run a while-loop to go through all observations.
         curr_offset = 0
         end_records = False
         while not end_records:
