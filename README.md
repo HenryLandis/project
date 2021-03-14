@@ -15,11 +15,12 @@ The list of dependencies required by ``sproc`` are:
 - ``matplotlib``
 - ``contextily``
 - ``seaborn``
+- ``shapely``
 - ``libpysal``
 
 The following command in ``conda`` installs these packages if not already installed:
 
-```conda install pygbif numpy pandas geopandas matplotlib contextily seaborn libpysal -c conda-forge```
+```conda install pygbif numpy pandas geopandas matplotlib contextily seaborn shapely libpysal -c conda-forge```
 
 Currently, ``sproc`` can only be installed locally.  Use the following commands to clone this repository to your local machine:
 
