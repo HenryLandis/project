@@ -2,7 +2,7 @@ import geoplot as gplt
 import geoplot.crs as gcrs
 import geopandas as gpd
 
-## url: shorturl.at/byDH8
+## example code: https://melaniesoek0120.medium.com/data-visualization-how-to-plot-a-map-with-geopandas-in-python-73b10dcd4b4b
 # use the 'naturalearth_lowers' geopandas datasets
 world = geopandas.read_file(geopandas.datasets.get_path('naturalearth_lowers'))
 
@@ -17,7 +17,7 @@ merge.plot(column = '', scheme = '', figsize =(,), legend = True, cmap = '')
 plt.show()
 
 ### kdeplot
-# link: geopandas.org/gallery/plotting_with_geoplot.html
+# link: https://geopandas.org/gallery/plotting_with_geoplot.html
 # under the kdeplot
 
 ax = gplt.polyplot(world, projection=gcrs.AlbersEqualArea())
