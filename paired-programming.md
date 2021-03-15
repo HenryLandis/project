@@ -22,11 +22,14 @@ In the utils.py file, there are functions such as *hexmap*, *recmap*, and *kdema
 Since I don't have a lot of experience coding, I'm including links and sources that may be useful for plotting occurrence data on maps.
 
 I found out that the Census Bureau's MAF/TIGER geographic database has the cartographic boundary files in shapefile format for USA map by state and by county. If you are trying to show occurrence at a finer resolution, this may be useful.
-This link shows somes example codes: shortutl.at/sFKNX.
+This link shows somes example codes: https://melaniesoek0120.medium.com/data-visualization-how-to-plot-a-map-with-geopandas-in-python-73b10dcd4b4b
+Cartographic boundary files: https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html.
 
 Also, rather than showing occurrence data as polygons. I was wondering if you have considered visualizing them using ``pointplots``.
-Link: shorturl.at/bqCLN
+Link: https://residentmario.github.io/geoplot/plot_references/plot_reference.html.
+Link: https://residentmario.github.io/geoplot/user_guide/Customizing_Plots.html
 
 Alternatively, the geoplot.kdeplot may be a good way to show the heat maps.
+Link: https://residentmario.github.io/geoplot/plot_references/plot_reference.html
 
 I'm sorry I couldn't be of more help in turns of contributing to the actual code.
