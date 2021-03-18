@@ -3,25 +3,32 @@
 import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
-# from mpl_toolkits.axes_grid1 import make_axes_locatable
-import matplotlib.cm as cm
 import contextily as cx
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+import matplotlib.cm as cm
 import seaborn as sns
 from shapely.geometry import Polygon
+import matplotlib.patches as mpatches
 import numpy as np
 import math
 import libpysal
 
-# TODO: for constructing polygons, what's a good way of filtering outlier points? One option is calculating distance from
-# a centroid.  That means making a polygon, removing points too far away from the array, then making the polygon again.
 
-# TODO: I think the colorbar is what messes up figure scaling, how do I make colorbar scale as well?
+# TODO: why do the above things appear as options in tab completion?
+
+
+# Make dataframes have wider columns for neatness.
+pd.set_option("max_colwidth", 14)
+
+
+# TODO: Filtering outlier points matters for both polygons and plotting.  One option is calculating distance from
+# a centroid.  That means making a polygon, removing points too far away from the array, then making the polygon again.
 
 
 def hexmap(data, figsize = (12, 9), gridsize = 10, alpha = 0.5, cmap = 'viridis_r'):
     """
-    Build a hex-based grid map from arrays of latitude/longitude occurrence data.  The gridsize parameter controls
-    the size of the hexaognal "bins" of point data.
+    Build a hex-based grid map from arrays of latitude/longitude occurrence data.
+    The gridsize parameter controls the size of the hexaognal "bins" of point data.
     """
 
     # Build a GeoDataFrame with geometry object from CSV file of lat/lon data, in WGS84 system.
@@ -35,7 +42,7 @@ def hexmap(data, figsize = (12, 9), gridsize = 10, alpha = 0.5, cmap = 'viridis_
     f, ax = plt.subplots(1, figsize = figsize)
 
     # Generate and add hexbins, no borderlines, half transparency.
-    hb = ax.hexbin(
+    ax.hexbin(
         gdf["Longitude"], # x
         gdf["Latitude"], # y
         gridsize = gridsize,
@@ -51,8 +58,10 @@ def hexmap(data, figsize = (12, 9), gridsize = 10, alpha = 0.5, cmap = 'viridis_
        source = cx.providers.OpenStreetMap.Mapnik
     )
 
-    # Add colorbar.  plt.colorbar(hb) also works fine, but this is more direct?
-    plt.colorbar(cm.ScalarMappable(norm = None, cmap = cmap), ax = ax)
+    # Add colorbar, forcing it to match figure size.
+    divider = make_axes_locatable(ax)
+    cax = divider.append_axes("right", size="5%", pad=0.1)
+    plt.colorbar(cm.ScalarMappable(norm = None, cmap = cmap), ax = ax, cax = cax)
 
     # Remove axes.
     ax.set_axis_off()
@@ -60,8 +69,9 @@ def hexmap(data, figsize = (12, 9), gridsize = 10, alpha = 0.5, cmap = 'viridis_
 
 def recmap(data, figsize = (12, 9), bins = 10, cmin = None, cmax = None, alpha = 0.5, cmap = 'viridis_r'):
     """
-    Build a rectangle-based grid map from latitude/longitude occurrence data.  Bins can be specified as
-    a single integer to produce equal bins in two dimensions (a square), or a list of two integers [int, int]
+    Build a rectangle-based grid map from latitude/longitude occurrence data.
+    Bins can be specified as a single integer to produce equal bins in two 
+    dimensions (a square), or a list of two integers [int, int]
     to create rectangular binning.
     """
 
@@ -76,7 +86,7 @@ def recmap(data, figsize = (12, 9), bins = 10, cmin = None, cmax = None, alpha =
     f, ax = plt.subplots(1, figsize = figsize)
 
     # Generate and add 2D histogram.
-    h2d = ax.hist2d(
+    ax.hist2d(
         gdf["Longitude"], # x
         gdf["Latitude"], # y
         bins = bins,
@@ -93,8 +103,10 @@ def recmap(data, figsize = (12, 9), bins = 10, cmin = None, cmax = None, alpha =
        source = cx.providers.OpenStreetMap.Mapnik
     )
 
-    # Add colorbar.
-    plt.colorbar(cm.ScalarMappable(norm = None, cmap = cmap), ax = ax)
+    # Add colorbar, forcing it to match figure size.
+    divider = make_axes_locatable(ax)
+    cax = divider.append_axes("right", size="5%", pad=0.1)
+    plt.colorbar(cm.ScalarMappable(norm = None, cmap = cmap), ax = ax, cax = cax)
 
     # Remove axes.
     ax.set_axis_off()
@@ -102,8 +114,8 @@ def recmap(data, figsize = (12, 9), bins = 10, cmin = None, cmax = None, alpha =
 
 def kdemap(data, figsize = (12, 9), levels = 50, alpha = 0.5, cmap = 'viridis_r'):
     """
-    Build a map of kernel density estimation from latitude/longitude occurrence data.  levels controls
-    the degree of gradient shading.
+    Build a map of kernel density estimation from latitude/longitude occurrence data.  
+    levels controls the degree of gradient shading.
     """
 
     # Build a GeoDataFrame with geometry object from CSV file of lat/lon data, in WGS84 system.
@@ -168,15 +180,25 @@ def plot_polygons_intersection(data1, data2, figsize = (12, 9), alpha = 0.5):
     )
 
 
-def plot_polygons_separate(data1, data2, sep = False, figsize = (30, 30), alpha = 0.5):
+def plot_polygons_separate(
+    data1, 
+    data2, 
+    label1 = None, 
+    label2 = None, 
+    sep = False,
+    legend = False,
+    figsize = (30, 30), 
+    alpha = 0.5,
+    fontsize = 20,
+    markerscale = 10):
     '''
-    Plot two polygons built from latitude/longitude occurrence data, either separately on two figures, or overlaid on
-    one figure.
+    Plot two polygons built from latitude/longitude occurrence data, 
+    either separately on two figures, or overlaid on one figure.
     '''
 
     # Load data.
-    df1 = pd.read_csv("/home/henrylandis/sproc/Quercus_coccinea.csv")
-    df2 = pd.read_csv("/home/henrylandis/sproc/Quercus_ellipsoidalis.csv")
+    df1 = pd.read_csv(data1)
+    df2 = pd.read_csv(data2)
 
     # Build convex hull polygons.
     poly1 = Polygon(gpd.points_from_xy(df1.Longitude, df1.Latitude)).convex_hull
@@ -189,8 +211,18 @@ def plot_polygons_separate(data1, data2, sep = False, figsize = (30, 30), alpha 
     # By default, plot the two polygons on top of each other.
     if not sep:
         f, ax = plt.subplots(ncols = 1, figsize = figsize)
-        p1.plot(ax = ax, alpha = alpha, color = 'red')
-        p2.plot(ax = ax, alpha = alpha, color = 'blue')
+        p1.plot(ax = ax, alpha = alpha, color = 'red', label = label1)
+        p2.plot(ax = ax, alpha = alpha, color = 'blue', label = label2)
+        if legend:
+            l1 = mpatches.Patch(color = 'red', label = label1)
+            l2 = mpatches.Patch(color = 'blue', label = label2)
+            plt.legend(
+                handles = [l1, l2], 
+                loc = 'lower right', 
+                bbox_to_anchor = (1, -0.25), 
+                fontsize = fontsize, 
+                markerscale = markerscale
+                )
 
         # Add basemap, converting tilemap in Web Mercator to WGS84.
         cx.add_basemap(
@@ -199,22 +231,32 @@ def plot_polygons_separate(data1, data2, sep = False, figsize = (30, 30), alpha 
             source = cx.providers.OpenStreetMap.Mapnik
         )
 
-    # Alternatively, plot each polygon on its own figure.  TODO: how to force same size? Maybe sharey = True?
+    # Alternatively, plot each polygon on its own figure.
     else:
-        f, (ax1, ax2) = plt.subplots(ncols = 2, sharex = True, figsize = figsize)
-        p1.plot(ax = ax1, alpha = 0.5)
-        p2.plot(ax = ax2, alpha = 0.5)
+        f, (ax1, ax2) = plt.subplots(ncols = 2, sharex = True, sharey = True, figsize = figsize)
+        p1.plot(ax = ax1, alpha = alpha, color = 'red', label = label1)
+        p2.plot(ax = ax2, alpha = alpha, color = 'blue', label = label2)
+        if legend:
+            l1 = mpatches.Patch(color = 'red', label = label1)
+            l2 = mpatches.Patch(color = 'blue', label = label2)
+            plt.legend(
+                handles = [l1, l2],
+                loc = 'lower center', 
+                bbox_to_anchor = (-0.15, -0.5), 
+                fontsize = fontsize, 
+                markerscale = markerscale
+                )
 
         # Add a basemap to each figure.
         cx.add_basemap(
-        ax1, 
-        crs = p1.crs.to_string(),
-        source = cx.providers.OpenStreetMap.Mapnik
+            ax1, 
+            crs = p1.crs.to_string(),
+            source = cx.providers.OpenStreetMap.Mapnik
         )
         cx.add_basemap(
-        ax2, 
-        crs = p2.crs.to_string(),
-        source = cx.providers.OpenStreetMap.Mapnik
+            ax2, 
+            crs = p2.crs.to_string(),
+            source = cx.providers.OpenStreetMap.Mapnik
         )
 
 
@@ -289,3 +331,36 @@ def calculate_overlay(lats1, lons1, lats2, lons2):
     # isn = gpd.tools.overlay(g1, g2, 'intersection')
     # isn.plot()
 
+
+def world_plot(
+    data1, 
+    data2 = None, 
+    label1 = None, 
+    label2 = None, 
+    legend = False, 
+    figsize = (15, 15), 
+    fontsize = 20, 
+    markerscale = 10):
+    '''
+    Plot worldwide occurrence data for one or two taxa.
+    '''
+
+    # Get world map from geopandas.
+    world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+    world = world[(world.pop_est > 0) & (world.name != "Antarctica")]
+    base = world.plot(color = 'white', edgecolor = 'black', figsize = figsize)
+
+    # Plot first set of occurrence data.
+    df1 = pd.read_csv(data1)
+    gdf1 = gpd.GeoDataFrame(df1, geometry = gpd.points_from_xy(df1.Longitude, df1.Latitude), crs = world.crs)
+    gdf1.plot(ax = base, marker = 'o', color = 'red', markersize = 5, label = label1)
+
+    # If there is a second set of occurrence data, plot that as well.
+    if data2:
+        df2 = pd.read_csv(data2)
+        gdf2 = gpd.GeoDataFrame(df2, geometry = gpd.points_from_xy(df2.Longitude, df2.Latitude), crs = world.crs)
+        gdf2.plot(ax = base, marker = 'o', color = 'blue', markersize = 5, label = label2)
+
+    # Add legend.
+    if legend:
+        base.legend(loc = 'lower right', bbox_to_anchor = (1, -0.25), fontsize = fontsize, markerscale = markerscale);
