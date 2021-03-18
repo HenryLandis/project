@@ -16,7 +16,8 @@ class Sproc:
     # lon: east/west, x
 
     def __init__(self,
-    sp_name = None,
+    sp_name,
+    basis = True,
     lat_range = None,
     lon_range = None,
     outdir = None
@@ -25,12 +26,9 @@ class Sproc:
         # Create a dict object to store parameters for gbif query.
         self.params = {}
 
-        # Build dict.  Include params if provided, otherwise set as None.  
-        # TODO: add elevation? Do enough entries have that?
-        if sp_name:
-            self.params['spname'] = sp_name
-        else:
-            self.params['spname'] = None
+        # Build dict.  For optional params, set if provided or set as None if not.
+        self.params['spname'] = sp_name
+        self.params['basis'] = basis
         if lat_range:
             _ = np.sort(lat_range)
             self.params['ymin'] = _[0]
@@ -68,13 +66,27 @@ class Sproc:
         self.lats = []
         self.lons = []
 
-        # Run a while-loop to go through all observations.
+        # Build dict to hold basis params.
+        basis_params = dict(
+            basisOfRecord = ['HUMAN_OBSERVATION', 'LIVING_SPECIMEN', 'FOSSIL_SPECIMEN'],
+        )
+
+        # Build dict to hold lat/long bounds.
+        search_bounds = dict(
+            decimalLatitude = ','.join([str(self.params['ymin']), str(self.params['ymax'])]),
+            decimalLongitude = ','.join([str(self.params['xmin']), str(self.params['xmax'])]),
+        )
+
+        # Run a while-loop to go through all observations.  By default, tries to narrow to native range.
+        # Don't pass lat/long bounds if none were entered.
         curr_offset = 0
         end_records = False
         while not end_records:
-            occ_records = occ.search(taxonKey = self.key, hasCoordinate = True, 
-            decimalLatitude = ','.join([str(self.params['ymin']), str(self.params['ymax'])]),
-            decimalLongitude = ','.join([str(self.params['xmin']), str(self.params['xmax'])]),
+            occ_records = occ.search(taxonKey = self.key, 
+            hasCoordinate = True,
+            # hasGeospatialIssue = False,
+            **{k: v for k, v in basis_params.items() if self.params['basis'] == True},
+            **{k: v for k, v in search_bounds.items() if 'None' not in v},
             offset = curr_offset
             )
             end_records = occ_records['endOfRecords']
@@ -129,5 +141,3 @@ class Sproc:
 
         # Get occurrence data.
         self.get_gbif_occs()
-
-
