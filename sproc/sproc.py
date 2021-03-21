@@ -5,6 +5,7 @@ from pygbif import occurrences as occ
 import numpy as np
 import os
 import pandas as pd
+from scipy import stats
 
 
 class Sproc:
@@ -18,6 +19,7 @@ class Sproc:
     def __init__(self,
     sp_name,
     basis = True,
+    continent = None,
     lat_range = None,
     lon_range = None,
     outdir = None
@@ -29,6 +31,10 @@ class Sproc:
         # Build dict.  For optional params, set if provided or set as None if not.
         self.params['spname'] = sp_name
         self.params['basis'] = basis
+        if continent:
+            self.params['continent'] = continent
+        else:
+            self.params['continent'] = None
         if lat_range:
             _ = np.sort(lat_range)
             self.params['ymin'] = _[0]
@@ -66,12 +72,13 @@ class Sproc:
         self.lats = []
         self.lons = []
 
-        # Build dict to hold basis params.
+        # Build dicts to hold optional parameters.
         basis_params = dict(
             basisOfRecord = ['HUMAN_OBSERVATION', 'LIVING_SPECIMEN', 'FOSSIL_SPECIMEN'],
         )
-
-        # Build dict to hold lat/long bounds.
+        continent_params = dict(
+            continent = self.params['continent']
+        )
         search_bounds = dict(
             decimalLatitude = ','.join([str(self.params['ymin']), str(self.params['ymax'])]),
             decimalLongitude = ','.join([str(self.params['xmin']), str(self.params['xmax'])]),
@@ -86,6 +93,7 @@ class Sproc:
             hasCoordinate = True,
             # hasGeospatialIssue = False,
             **{k: v for k, v in basis_params.items() if self.params['basis'] == True},
+            **{k: v for k, v in continent_params.items() if self.params['continent'] is not None},
             **{k: v for k, v in search_bounds.items() if 'None' not in v},
             offset = curr_offset
             )
@@ -104,6 +112,9 @@ class Sproc:
                 df = pd.DataFrame({'Latitude': self.lats, 'Longitude': self.lons})
                 df = df.drop_duplicates().reset_index()
                 df = df.drop('index', axis = 1)
+
+                # Filter outliers.
+                df = df[(np.abs(stats.zscore(df)) < 3).all(axis=1)]
 
                 # Reform the lists by subsetting the dataframe.
                 self.lats = list(df['Latitude'])
