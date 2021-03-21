@@ -19,7 +19,9 @@ The list of dependencies required by ``sproc`` are:
 
 The following command in ``conda`` installs these packages if not already installed:
 
-```conda install pygbif numpy pandas scipy geopandas matplotlib contextily seaborn shapely libpysal -c conda-forge```
+```
+conda install pygbif numpy pandas scipy geopandas matplotlib contextily seaborn shapely libpysal -c conda-forge
+```
 
 Currently, ``sproc`` can only be installed locally.  Use the following commands to clone this repository to your local machine:
 
@@ -87,15 +89,17 @@ QP.run()
 
 ```
 from sproc import utils
-utils.plot_polygons_separate("/home/henrylandis/sproc/Quercus_rubra.csv", "/home/henrylandis/sproc/Quercus_palustris.csv",
+utils.plot_polygons_separate("/home/henrylandis/sproc/Quercus_rubra.csv", 
+                             "/home/henrylandis/sproc/Quercus_palustris.csv",
                             label1 = "Quercus rubra", label2 = "Quercus palustris", sep = True, legend = True, 
                             figsize = (50, 50), fontsize = 40, markerscale = 25)
 ```
 
-![](https://gyazo.com/baf0a98416c0527abbc01ea50c4aefbe)
+![](https://gyazo.com/baf0a98416c0527abbc01ea50c4aefbe.jpg)
 
 ```
-utils.plot_polygons_separate("/home/henrylandis/sproc/Quercus_rubra.csv", "/home/henrylandis/sproc/Quercus_palustris.csv",
+utils.plot_polygons_separate("/home/henrylandis/sproc/Quercus_rubra.csv", 
+                             "/home/henrylandis/sproc/Quercus_palustris.csv",
                             label1 = "Quercus rubra", label2 = "Quercus palustris", sep = False, legend = True, 
                             figsize = (50, 50), fontsize = 40, markerscale = 25)
 ```
