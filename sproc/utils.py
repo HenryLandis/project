@@ -23,6 +23,40 @@ pd.set_option("max_colwidth", 14)
 
 # TODO: Filtering outlier points matters for both polygons and plotting.  One option is calculating distance from
 # a centroid.  That means making a polygon, removing points too far away from the array, then making the polygon again.
+def centroid(data):
+    """
+    calculate centroid of occurrence points
+
+    data must be a dataframe with 'Latitude' and 'Longitude' columns
+    """
+    x = 0.0
+    y = 0.0
+    z = 0.0
+
+    for i, coord in data.iterrows():
+        latitude = math.radians(coord.Latitude)
+        longitude = math.radians(coord.Longitude)
+
+        x += math.cos(latitude) * math.cos(longitude)
+        y += math.cos(latitude) * math.sin(longitude)
+        z += math.sin(latitude)
+
+    total = len(data)
+
+    x = x / total
+    y = y / total
+    z = z / total
+
+    central_longitude = math.atan2(y, x)
+    central_square_root = math.sqrt(x * x + y * y)
+    central_latitude = math.atan2(z, central_square_root)
+
+    mean_location = {
+        'latitude': math.degrees(central_latitude),
+        'longitude': math.degrees(central_longitude)
+        }
+
+    return mean_location
 
 
 def hexmap(data, figsize = (12, 9), gridsize = 10, alpha = 0.5, cmap = 'viridis_r'):
@@ -47,13 +81,13 @@ def hexmap(data, figsize = (12, 9), gridsize = 10, alpha = 0.5, cmap = 'viridis_
         gdf["Latitude"], # y
         gridsize = gridsize,
         linewidths = 0,
-        alpha = alpha, 
+        alpha = alpha,
         cmap = cmap
     )
 
     # Add basemap, converting tilemap in Web Mercator to WGS84.
     cx.add_basemap(
-       ax, 
+       ax,
        crs = gdf.crs.to_string(),
        source = cx.providers.OpenStreetMap.Mapnik
     )
@@ -70,7 +104,7 @@ def hexmap(data, figsize = (12, 9), gridsize = 10, alpha = 0.5, cmap = 'viridis_
 def recmap(data, figsize = (12, 9), bins = 10, cmin = None, cmax = None, alpha = 0.5, cmap = 'viridis_r'):
     """
     Build a rectangle-based grid map from latitude/longitude occurrence data.
-    Bins can be specified as a single integer to produce equal bins in two 
+    Bins can be specified as a single integer to produce equal bins in two
     dimensions (a square), or a list of two integers [int, int]
     to create rectangular binning.
     """
@@ -98,7 +132,7 @@ def recmap(data, figsize = (12, 9), bins = 10, cmin = None, cmax = None, alpha =
 
     # Add basemap, converting tilemap in Web Mercator to WGS84.
     cx.add_basemap(
-       ax, 
+       ax,
        crs = gdf.crs.to_string(),
        source = cx.providers.OpenStreetMap.Mapnik
     )
@@ -132,15 +166,15 @@ def kdemap(data, figsize = (12, 9), levels = 50, alpha = 0.5, cmap = 'viridis_r'
     sns.kdeplot(
         gdf["Longitude"], # x
         gdf["Latitude"], # y
-        n_levels = levels, 
+        n_levels = levels,
         shade = True,
-        alpha = alpha, 
+        alpha = alpha,
         cmap = cmap
     )
 
     # Add basemap, converting tilemap in Web Mercator to WGS84.
     cx.add_basemap(
-       ax, 
+       ax,
        crs = gdf.crs.to_string(),
        source = cx.providers.OpenStreetMap.Mapnik
     )
@@ -174,25 +208,25 @@ def plot_polygons_intersection(data1, data2, figsize = (12, 9), alpha = 0.5):
     # Plot the intersection.
     ax = isn.plot(figsize = figsize, alpha = alpha)
     cx.add_basemap(
-        ax, 
+        ax,
         crs = g1.crs.to_string(),
         source = cx.providers.OpenStreetMap.Mapnik
     )
 
 
 def plot_polygons_separate(
-    data1, 
-    data2, 
-    label1 = None, 
-    label2 = None, 
+    data1,
+    data2,
+    label1 = None,
+    label2 = None,
     sep = False,
     legend = False,
-    figsize = (30, 30), 
+    figsize = (30, 30),
     alpha = 0.5,
     fontsize = 20,
     markerscale = 10):
     '''
-    Plot two polygons built from latitude/longitude occurrence data, 
+    Plot two polygons built from latitude/longitude occurrence data,
     either separately on two figures, or overlaid on one figure.
     '''
 
@@ -226,7 +260,7 @@ def plot_polygons_separate(
 
         # Add basemap, converting tilemap in Web Mercator to WGS84.
         cx.add_basemap(
-            ax, 
+            ax,
             crs = p1.crs.to_string(),
             source = cx.providers.OpenStreetMap.Mapnik
         )
@@ -241,20 +275,20 @@ def plot_polygons_separate(
             l2 = mpatches.Patch(color = 'blue', label = label2)
             plt.legend(
                 handles = [l1, l2],
-                loc = 'lower center', 
-                bbox_to_anchor = (-0.15, -0.5), 
-                fontsize = fontsize, 
+                loc = 'lower center',
+                bbox_to_anchor = (-0.15, -0.5),
+                fontsize = fontsize,
                 markerscale = markerscale
                 )
 
         # Add a basemap to each figure.
         cx.add_basemap(
-            ax1, 
+            ax1,
             crs = p1.crs.to_string(),
             source = cx.providers.OpenStreetMap.Mapnik
         )
         cx.add_basemap(
-            ax2, 
+            ax2,
             crs = p2.crs.to_string(),
             source = cx.providers.OpenStreetMap.Mapnik
         )
@@ -262,7 +296,7 @@ def plot_polygons_separate(
 
 def get_cartesian(lats, lons):
     """
-    Transform lattitude and longitude coordinates into (roughly) Cartesian equivalents.
+    Transform latitude and longitude coordinates into (roughly) Cartesian equivalents.
     """
 
     # Create three empty arrays.
@@ -284,16 +318,16 @@ def get_cartesian(lats, lons):
 
     # Return XY coordinates.
     return cart_y, cart_x, cart_z
-        
+     
 
 def calculate_overlay(lats1, lons1, lats2, lons2):
     """
-    Calculate the intersection of two polygons constructed as alpha shapes from 
+    Calculate the intersection of two polygons constructed as alpha shapes from
     latitude/longitude occurrence data of two taxa.
     """
 
     # Transform to arrays of Cartesian coordinates.
-    cart_y1, cart_x1 , cart_z1 = get_cartesian(lats1, lons1)
+    cart_y1, cart_x1, cart_z1 = get_cartesian(lats1, lons1)
     cart_y2, cart_x2, cart_z2 = get_cartesian(lats2, lons2)
 
     # Create XY lists and XYZ lists.
@@ -327,19 +361,19 @@ def calculate_overlay(lats1, lons1, lats2, lons2):
     # g1 = gpd.GeoDataFrame(d1)
     # g2 = gpd.GeoDataFrame(d2)
 
-    # Calculate and plot the intersection.  
+    # Calculate and plot the intersection. 
     # isn = gpd.tools.overlay(g1, g2, 'intersection')
     # isn.plot()
 
 
 def world_plot(
-    data1, 
-    data2 = None, 
-    label1 = None, 
-    label2 = None, 
-    legend = False, 
-    figsize = (15, 15), 
-    fontsize = 20, 
+    data1,
+    data2 = None,
+    label1 = None,
+    label2 = None,
+    legend = False,
+    figsize = (15, 15),
+    fontsize = 20,
     markerscale = 10):
     '''
     Plot worldwide occurrence data for one or two taxa.
