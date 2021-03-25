@@ -26,7 +26,7 @@ The following dependencies are optional, but may be required for certain functio
 - ``seaborn``
 - ``libpysal``
 
-If you would like to contribut to the development of ``sproc``, use the following commands to clone this repository to your local machine:
+If you would like to contribute to the development of ``sproc``, use the following commands to clone this repository to your local machine:
 
 ```
 git clone https://github.com/HenryLandis/sproc.git
