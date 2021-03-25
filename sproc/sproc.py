@@ -6,12 +6,13 @@ import numpy as np
 import os
 import pandas as pd
 from scipy import stats
+import shapely
 
 
 class Sproc:
     """
-    A class object to store data on species occurrence from gbif.  Users supply a species name, latitude/longitude range,
-    and a directory for saving the output in CSV format.
+    A class object to store data on species occurrence from gbif.  Users supply a species
+    name and optionally a selection of other parmeters.
     """
     # lat: north/south, y
     # lon: east/west, x
@@ -25,7 +26,7 @@ class Sproc:
     outdir = None
     ):
 
-        # Create a dict object to store parameters for gbif query.
+        # Create a dict object to store parameters for setting up gbif queries.
         self.params = {}
 
         # Build dict.  For optional params, set if provided or set as None if not.
@@ -55,9 +56,34 @@ class Sproc:
             self.outdir = os.path.realpath(os.path.expanduser(outdir))
         else:
             self.outdir = os.path.expanduser(os.path.curdir)
+        
+        # Set a geometry attribute.
+        self.geometry = None
 
 
-    def get_gbif_occs(self):
+    def get_shapefile(self):
+        """
+        Retrieves a locally saved shapefile for the species specified by the class instance,
+        if the file is available.
+        """
+
+        import geopandas as gpd
+
+        # Build the filepath to the expected shapefile.
+        filepath = "../shapefiles/" + self.params['spname'].replace(" ", "_") + ".shp"
+
+        # If the filepath exists, save the shapefile to the class instance.
+        if os.path.exists(filepath) == True:
+            self.geometry = gpd.read_file(filepath)
+            print("Saved local shapefile to class instance.")
+
+        # If not, raise an error.
+        else:
+            print("No local shapefile available for this species.")
+
+
+
+    def get_gbif_occs(self, geometry = False, tol = 0):
         """
         Query the gbif database for occurrence data.
         """
@@ -72,13 +98,22 @@ class Sproc:
         self.lats = []
         self.lons = []
 
-        # Build dicts to hold optional parameters.
+        # Build dicts for optional params.
+        # if self.params['basis'] == True:
         basis_params = dict(
             basisOfRecord = ['HUMAN_OBSERVATION', 'LIVING_SPECIMEN', 'FOSSIL_SPECIMEN'],
         )
+        # if self.params['continent'] is not None:
         continent_params = dict(
             continent = self.params['continent']
         )
+        if geometry == True:
+            geo_orient = shapely.geometry.polygon.orient(self.geometry['geometry'][0], 1.0) # Counter-clockwise for GBIF.
+            geometry_bounds = dict(
+                geometry = str(geo_orient.simplify(tol))
+            )
+        else:
+            geometry_bounds = dict(place = 'holder')
         search_bounds = dict(
             decimalLatitude = ','.join([str(self.params['ymin']), str(self.params['ymax'])]),
             decimalLongitude = ','.join([str(self.params['xmin']), str(self.params['xmax'])]),
@@ -94,6 +129,7 @@ class Sproc:
             # hasGeospatialIssue = False,
             **{k: v for k, v in basis_params.items() if self.params['basis'] == True},
             **{k: v for k, v in continent_params.items() if self.params['continent'] is not None},
+            **{k: v for k, v in geometry_bounds.items() if geometry == True},
             **{k: v for k, v in search_bounds.items() if 'None' not in v},
             offset = curr_offset
             )
@@ -141,7 +177,7 @@ class Sproc:
         self.lons = np.array(self.lons)
         
 
-    def run(self):
+    def run(self, geometry = False, tol = 0):
         """
         Simple command to save occurrence data to class object.
         """
@@ -151,4 +187,30 @@ class Sproc:
             os.mkdir(self.outdir)
 
         # Get occurrence data.
-        self.get_gbif_occs()
+        self.get_gbif_occs(geometry = geometry, tol = tol)
+
+
+    def write_shapefile(self):
+        """
+        Build and save a shapefile from retrieved points.
+        """
+
+        from shapely.geometry import Polygon
+        import shapefile
+
+        # Build a list lat/lon pairs from retrieved points.
+        points = [[lat, lon] for lat, lon in zip(self.lats, self.lons)]
+
+        # Build a convex hull from the points, then orient the points clockwise for writing to shapefile.
+        poly = Polygon(points).convex_hull
+        poly_orient = shapely.geometry.polygon.orient(poly, -1.0)
+
+        # Rearrange exterior coords from the oriented convex hull into long/lat (XY).  This is because 
+        # GBIF requires a geometry argument in WKT, which is an XY format.
+        wpoints = [[lon, lat] for lon, lat in zip(poly_orient.exterior.coords.xy[1], poly_orient.exterior.coords.xy[0])]
+
+        # Write to shapefile.  Can load with get_shapefile() if desired.
+        with shapefile.Writer(os.path.join("../shapefiles", self.params['spname'].replace(" ", "_")), shapeType = 5) as w:
+            w.field('poly', 'C')
+            w.poly([wpoints])
+            w.record("polygon1")
