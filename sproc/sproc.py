@@ -6,6 +6,7 @@ import numpy as np
 import os
 import pandas as pd
 from scipy import stats
+import geopandas as gpd
 import shapely
 
 
@@ -61,25 +62,23 @@ class Sproc:
         self.geometry = None
 
 
-    def get_shapefile(self):
+    def load_geojson(self):
         """
-        Retrieves a locally saved shapefile for the species specified by the class instance,
+        Loads a locally saved GeoJSON file for the species specified by the class instance,
         if the file is available.
         """
 
-        import geopandas as gpd
+        # Build the filepath to the expected GeoJSON file.
+        filepath = "../geojson/" + self.params['spname'].replace(" ", "_") # + ".geojson"
 
-        # Build the filepath to the expected shapefile.
-        filepath = "../shapefiles/" + self.params['spname'].replace(" ", "_") + ".shp"
-
-        # If the filepath exists, save the shapefile to the class instance.
+        # If the filepath exists, save the GeoJSON data to the class instance.
         if os.path.exists(filepath) == True:
             self.geometry = gpd.read_file(filepath)
-            print("Saved local shapefile to class instance.")
+            print("Saved local GeoJSON file to class instance.")
 
         # If not, raise an error.
         else:
-            print("No local shapefile available for this species.")
+            print("No local GeoJSON file available for this species.")
 
 
 
@@ -190,27 +189,33 @@ class Sproc:
         self.get_gbif_occs(geometry = geometry, tol = tol)
 
 
-    def write_shapefile(self):
+    def write_geojson(self):
         """
-        Build and save a shapefile from retrieved points.
+        Build and save a GeoJSON file from retrieved points.
         """
 
         from shapely.geometry import Polygon
-        import shapefile
+        # import shapefile
 
         # Build a list lat/lon pairs from retrieved points.
         points = [[lat, lon] for lat, lon in zip(self.lats, self.lons)]
 
-        # Build a convex hull from the points, then orient the points clockwise for writing to shapefile.
+        # Build a convex hull from the points.  
         poly = Polygon(points).convex_hull
-        poly_orient = shapely.geometry.polygon.orient(poly, -1.0)
+        # poly_orient = shapely.geometry.polygon.orient(poly, -1.0) clockwise points for writing to .shp
 
-        # Rearrange exterior coords from the oriented convex hull into long/lat (XY).  This is because 
+        # Rearrange exterior coords from the convex hull into long/lat (XY), then reform polygon with those points. 
         # GBIF requires a geometry argument in WKT, which is an XY format.
-        wpoints = [[lon, lat] for lon, lat in zip(poly_orient.exterior.coords.xy[1], poly_orient.exterior.coords.xy[0])]
+        wpoints = [[lon, lat] for lon, lat in zip(poly.exterior.coords.xy[1], poly.exterior.coords.xy[0])]
+        wpoly = Polygon(wpoints)
+
+        # Build a GeoDataFrame from the polygon, then save it to GeoJSON format.
+        d = {'name': ['name1'], 'geometry': [wpoly]}
+        gdf = gpd.GeoDataFrame(d, crs = 'EPSG:4326')
+        gdf.to_file(os.path.join("../geojson", self.params['spname'].replace(" ", "_")), driver = "GeoJSON")
 
         # Write to shapefile.  Can load with get_shapefile() if desired.
-        with shapefile.Writer(os.path.join("../shapefiles", self.params['spname'].replace(" ", "_")), shapeType = 5) as w:
-            w.field('poly', 'C')
-            w.poly([wpoints])
-            w.record("polygon1")
+        #with shapefile.Writer(os.path.join("../shapefiles", self.params['spname'].replace(" ", "_")), shapeType = 5) as w:
+            #w.field('poly', 'C')
+            #w.poly([wpoints])
+            #w.record("polygon1")
