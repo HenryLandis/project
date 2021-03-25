@@ -6,12 +6,8 @@ import matplotlib.pyplot as plt
 import contextily as cx
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 import matplotlib.cm as cm
-import seaborn as sns
 from shapely.geometry import Polygon
 import matplotlib.patches as mpatches
-import numpy as np
-import math
-import libpysal
 
 
 # TODO: why do the above things appear as options in tab completion?
@@ -94,7 +90,7 @@ def hexmap(data, figsize = (12, 9), gridsize = 10, alpha = 0.5, cmap = 'viridis_
 
     # Add colorbar, forcing it to match figure size.
     divider = make_axes_locatable(ax)
-    cax = divider.append_axes("right", size="5%", pad=0.1)
+    cax = divider.append_axes("right", size = "5%", pad = 0.1)
     plt.colorbar(cm.ScalarMappable(norm = None, cmap = cmap), ax = ax, cax = cax)
 
     # Remove axes.
@@ -139,7 +135,7 @@ def recmap(data, figsize = (12, 9), bins = 10, cmin = None, cmax = None, alpha =
 
     # Add colorbar, forcing it to match figure size.
     divider = make_axes_locatable(ax)
-    cax = divider.append_axes("right", size="5%", pad=0.1)
+    cax = divider.append_axes("right", size = "5%", pad = 0.1)
     plt.colorbar(cm.ScalarMappable(norm = None, cmap = cmap), ax = ax, cax = cax)
 
     # Remove axes.
@@ -151,6 +147,8 @@ def kdemap(data, figsize = (12, 9), levels = 50, alpha = 0.5, cmap = 'viridis_r'
     Build a map of kernel density estimation from latitude/longitude occurrence data.  
     levels controls the degree of gradient shading.
     """
+
+    import seaborn as sns
 
     # Build a GeoDataFrame with geometry object from CSV file of lat/lon data, in WGS84 system.
     df = pd.read_csv(data)
@@ -298,6 +296,8 @@ def get_cartesian(lats, lons):
     """
     Transform latitude and longitude coordinates into (roughly) Cartesian equivalents.
     """
+    import numpy as np
+    import math
 
     # Create three empty arrays.
     cart_y = np.zeros((len(lats), 1))
@@ -325,7 +325,7 @@ def calculate_overlay(lats1, lons1, lats2, lons2):
     Calculate the intersection of two polygons constructed as alpha shapes from
     latitude/longitude occurrence data of two taxa.
     """
-
+    
     # Transform to arrays of Cartesian coordinates.
     cart_y1, cart_x1, cart_z1 = get_cartesian(lats1, lons1)
     cart_y2, cart_x2, cart_z2 = get_cartesian(lats2, lons2)
@@ -337,6 +337,7 @@ def calculate_overlay(lats1, lons1, lats2, lons2):
     coords2z = np.append(coordinates2, cart_z2, axis = 1)
 
     # Calculate alpha shapes from XY lists.
+    import libpysal
     alpha_shape1, alpha1, circs1 = libpysal.cg.alpha_shape_auto(coordinates1, return_circles = True)
     alpha_shape2, alpha2, circs2 = libpysal.cg.alpha_shape_auto(coordinates2, return_circles = True)
 
