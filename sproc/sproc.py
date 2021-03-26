@@ -213,6 +213,7 @@ class Sproc:
         d = {'name': ['name1'], 'geometry': [wpoly]}
         gdf = gpd.GeoDataFrame(d, crs = 'EPSG:4326')
         gdf.to_file(os.path.join("../geojson", self.params['spname'].replace(" ", "_")), driver = "GeoJSON")
+        print("Wrote polygon to local GeoJSON file.")
 
         # Write to shapefile.  Can load with get_shapefile() if desired.
         #with shapefile.Writer(os.path.join("../shapefiles", self.params['spname'].replace(" ", "_")), shapeType = 5) as w:
