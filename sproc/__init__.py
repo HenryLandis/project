@@ -6,5 +6,10 @@ init stuff
 
 __version__ = "0.0.1"
 
-from sproc.sproc import Sproc
-from .utils import *
+import sproc.fetch
+import sproc.jsonify
+import sproc.imap
+from sproc.newsproc import Sproc
+from sproc.helpers import set_loglevel
+
+set_loglevel("INFO")
