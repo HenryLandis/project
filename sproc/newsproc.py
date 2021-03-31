@@ -6,7 +6,11 @@ The main API interface
 
 from sproc.fetch import Fetch
 from sproc.jsonify import GeographicRange
-from sproc.imap import Map
+from sproc.imap import SingleIMap
+
+
+# TODO: after making MultiIMap class object, revise this object to run either SingleIMap or MultiIMap depending
+# on the species input.  Maybe a run and multirun function?
 
 
 class Sproc:
@@ -37,7 +41,7 @@ class Sproc:
         )
         self.data = records.data
         self.georange = georange.georange
-        self.map = Map(georange.json_file).imap
+        self.map = SingleIMap(georange.json_file).imap
 
 
     def __repr__(self):

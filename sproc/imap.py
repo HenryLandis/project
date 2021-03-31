@@ -9,7 +9,10 @@ import folium
 import geopandas
 
 
-class Map:
+# TODO: make MultiIMap object, to compare with original (renamed SingleIMap).
+
+
+class SingleIMap:
     """
     Parameters:
     ------------
