@@ -20,9 +20,16 @@ class Fetch:
     sp_name: str
         ...
     """
-    def __init__(self, species):
+    def __init__(
+        self, 
+        species, 
+        kwargs = {
+            'basisOfRecord': 'PRESERVED_SPECIMEN',            
+            }
+        ):
         self.species = species
         self.data = pd.DataFrame([])
+        self.kwargs = kwargs
         self.request()
         logger.info(f"fetched {self.data.shape[0]} occurrence records")
 
@@ -38,10 +45,10 @@ class Fetch:
         )['usageKey']
 
         # build a dict for other search kwargs
-        kwargs = {
-            'basisOfRecord': 'PRESERVED_SPECIMEN',            
+        #kwargs = {
+            #'basisOfRecord': 'PRESERVED_SPECIMEN',            
             # 'basisOfRecord': 'HUMAN_OBSERVATION',
-        }
+        #}
 
         # Run a while-loop to go through all observations.  
         data = []
@@ -53,7 +60,7 @@ class Fetch:
                 taxonKey=species_key, 
                 hasCoordinate=True,
                 offset=curr_offset,
-                **kwargs
+                **self.kwargs
             )
 
             # store JSON array
