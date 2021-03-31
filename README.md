@@ -4,27 +4,34 @@
 
 ### In development...
 
-The following is a list of dependencies required by ``sproc``:
+The following is a list of dependencies required by the ``sproc`` core querying functionality:
 
 - ``pygbif``
 - ``numpy``
 - ``pandas``
-- ``scipy``
-- ``geopandas``
-- ``matplotlib``
-- ``contextily``
+- ``loguru``
 - ``shapely``
+- ``geojson``
 
 The following command in conda installs these packages if not already installed:
 
 ```
-conda install pygbif numpy pandas scipy geopandas matplotlib contextily shapely  -c conda-forge
+conda install pygbif numpy pandas loguru shapely geojson -c conda-forge
 ```
 
-The following dependencies are optional, but may be required for certain functions:
-- ``pyshp``
+For ``sproc`` mapping functionality, the following package is required:
+
+- ``geopandas``
+
+Additionally required for static mapping:
+
+- ``matplotlib``
+- ``contextily``
 - ``seaborn``
-- ``libpysal``
+
+Additinally required for interactive mapping:
+
+- ``folium``
 
 If you would like to contribute to the development of ``sproc``, use the following commands to clone this repository to your local machine:
 
@@ -34,7 +41,7 @@ cd ./sproc
 pip install -e .
 ```
 
-### Working example
+### Working example (outdated, to be revamped)
 
 The class object ``Sproc`` handles the formatting of queries to the Global Biodiversity Information Facility (GBIF) database.  At minumum, the user must supply a scientific species name.  By default, the parameter ``basis = True`` constrains the query to only retrieve live observations of the species.
 
