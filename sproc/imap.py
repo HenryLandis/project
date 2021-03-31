@@ -33,6 +33,24 @@ class SingleIMap:
         self.imap.add_child(folium.LayerControl())
 
 
+    def add_geojson(self, json_file):
+        """
+        Add GeoJson data from another sproc geojson file to this map.
+        This can be used to merge together bounds and points from two
+        or more species.
+        """
+        self.json_file = json_file
+        self.name = os.path.basename(self.json_file).rsplit(".json")[0]
+        self.data = geopandas.read_file(json_file)
+
+        # self._add_poly()
+        self._add_points()
+        # self._add_outlier_points()
+
+        # refit the bounds
+        # ...
+
+
     def _get_base_imap(self):
         """
         Load a basemap 
@@ -49,7 +67,7 @@ class SingleIMap:
         Adds a MultiPolygon for the geographic range on its own layer
         """
         # make a layer for the polygon shape
-        layer_poly = folium.FeatureGroup(name=f"Range: {self.name}")
+        layer_poly = folium.FeatureGroup(name=f"{self.name} bounds")
         
         # add the polygon to this layer
         layer_poly.add_child(
@@ -59,7 +77,7 @@ class SingleIMap:
 
         # add this layer to the map
         self.imap.add_child(layer_poly)
-        self.imap.fit_bounds(layer_poly.get_bounds())
+        # self.imap.fit_bounds(layer_poly.get_bounds())
 
 
     def _add_points(self):
@@ -67,7 +85,7 @@ class SingleIMap:
         Adds markers for occurrence points on a separate layer
         """
         # make a layer for points
-        layer_points = folium.FeatureGroup(name="Occurrences")
+        layer_points = folium.FeatureGroup(name=f"{self.name} occurrence")
 
         # get points as markers
         mask1 = self.data['type'] == "occurrence"
@@ -88,6 +106,10 @@ class SingleIMap:
         """
         Adds outliers as Points in red color
         """
+        # skip if no outliers present
+        if all(self.data[self.data['type'] == 'occurrence'].outlier == "false"):
+            return 
+
         # make a layer for points
         layer_outliers = folium.FeatureGroup(name="Outliers")
 

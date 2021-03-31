@@ -19,7 +19,7 @@ class GeographicRange:
     """
     def __init__(self, data, name="test", workdir=".", scalar=3):
 
-        self.data = data
+        self.data = data.reset_index()
         self.name = name
         self.workdir = workdir
         self.json_file = (
@@ -68,7 +68,10 @@ class GeographicRange:
             point = shapely.geometry.Point(self.points[idx])
             self.data.loc[idx, "outlier_distance"] = point.distance(origin)
 
-        # label as outlier if >3 STD
+        # Adds 1e-7 to prevent dist=0
+        self.data["outlier_distance"] += 1e-7
+
+        # label as outlier if >3 STD. 
         cutoff = np.log(self.data["outlier_distance"]).std() * scalar
         mask = np.log(self.data["outlier_distance"]) >= cutoff
         self.data.loc[mask, "outlier_status"] = True
