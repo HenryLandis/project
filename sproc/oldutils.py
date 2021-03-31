@@ -17,44 +17,6 @@ import matplotlib.patches as mpatches
 pd.set_option("max_colwidth", 14)
 
 
-# TODO: Filtering outlier points matters for both polygons and plotting.  One option is calculating distance from
-# a centroid.  That means making a polygon, removing points too far away from the array, then making the polygon again.
-def centroid(data):
-    """
-    calculate centroid of occurrence points
-
-    data must be a dataframe with 'Latitude' and 'Longitude' columns
-    """
-    x = 0.0
-    y = 0.0
-    z = 0.0
-
-    for i, coord in data.iterrows():
-        latitude = math.radians(coord.Latitude)
-        longitude = math.radians(coord.Longitude)
-
-        x += math.cos(latitude) * math.cos(longitude)
-        y += math.cos(latitude) * math.sin(longitude)
-        z += math.sin(latitude)
-
-    total = len(data)
-
-    x = x / total
-    y = y / total
-    z = z / total
-
-    central_longitude = math.atan2(y, x)
-    central_square_root = math.sqrt(x * x + y * y)
-    central_latitude = math.atan2(z, central_square_root)
-
-    mean_location = {
-        'latitude': math.degrees(central_latitude),
-        'longitude': math.degrees(central_longitude)
-        }
-
-    return mean_location
-
-
 def hexmap(data, figsize = (12, 9), gridsize = 10, alpha = 0.5, cmap = 'viridis_r'):
     """
     Build a hex-based grid map from arrays of latitude/longitude occurrence data.
@@ -200,7 +162,6 @@ def plot_polygons_intersection(data1, data2, figsize = (12, 9), alpha = 0.5):
 
     # geopandas calculates intersections by overlapping at the dataframe level.
     # TODO: is a direct intersection the best measure of overlap? Review lit.
-    # TODO: can I get the perimeter of this intersection?
     isn = gpd.tools.overlay(g1, g2, 'intersection')
 
     # Plot the intersection.
@@ -292,6 +253,42 @@ def plot_polygons_separate(
         )
 
 
+def world_plot(
+    data1,
+    data2 = None,
+    label1 = None,
+    label2 = None,
+    legend = False,
+    figsize = (15, 15),
+    fontsize = 20,
+    markerscale = 10):
+    '''
+    Plot worldwide occurrence data for one or two taxa.
+    '''
+
+    # Get world map from geopandas.
+    world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+    world = world[(world.pop_est > 0) & (world.name != "Antarctica")]
+    base = world.plot(color = 'white', edgecolor = 'black', figsize = figsize)
+
+    # Plot first set of occurrence data.
+    df1 = pd.read_csv(data1)
+    gdf1 = gpd.GeoDataFrame(df1, geometry = gpd.points_from_xy(df1.Longitude, df1.Latitude), crs = world.crs)
+    gdf1.plot(ax = base, marker = 'o', color = 'red', markersize = 5, label = label1)
+
+    # If there is a second set of occurrence data, plot that as well.
+    if data2:
+        df2 = pd.read_csv(data2)
+        gdf2 = gpd.GeoDataFrame(df2, geometry = gpd.points_from_xy(df2.Longitude, df2.Latitude), crs = world.crs)
+        gdf2.plot(ax = base, marker = 'o', color = 'blue', markersize = 5, label = label2)
+
+    # Add legend.
+    if legend:
+        base.legend(loc = 'lower right', bbox_to_anchor = (1, -0.25), fontsize = fontsize, markerscale = markerscale);
+
+
+# ---------------------------------
+
 def get_cartesian(lats, lons):
     """
     Transform latitude and longitude coordinates into (roughly) Cartesian equivalents.
@@ -367,35 +364,37 @@ def calculate_overlay(lats1, lons1, lats2, lons2):
     # isn.plot()
 
 
-def world_plot(
-    data1,
-    data2 = None,
-    label1 = None,
-    label2 = None,
-    legend = False,
-    figsize = (15, 15),
-    fontsize = 20,
-    markerscale = 10):
-    '''
-    Plot worldwide occurrence data for one or two taxa.
-    '''
+def centroid(data):
+    """
+    calculate centroid of occurrence points
 
-    # Get world map from geopandas.
-    world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
-    world = world[(world.pop_est > 0) & (world.name != "Antarctica")]
-    base = world.plot(color = 'white', edgecolor = 'black', figsize = figsize)
+    data must be a dataframe with 'Latitude' and 'Longitude' columns
+    """
+    x = 0.0
+    y = 0.0
+    z = 0.0
 
-    # Plot first set of occurrence data.
-    df1 = pd.read_csv(data1)
-    gdf1 = gpd.GeoDataFrame(df1, geometry = gpd.points_from_xy(df1.Longitude, df1.Latitude), crs = world.crs)
-    gdf1.plot(ax = base, marker = 'o', color = 'red', markersize = 5, label = label1)
+    for i, coord in data.iterrows():
+        latitude = math.radians(coord.Latitude)
+        longitude = math.radians(coord.Longitude)
 
-    # If there is a second set of occurrence data, plot that as well.
-    if data2:
-        df2 = pd.read_csv(data2)
-        gdf2 = gpd.GeoDataFrame(df2, geometry = gpd.points_from_xy(df2.Longitude, df2.Latitude), crs = world.crs)
-        gdf2.plot(ax = base, marker = 'o', color = 'blue', markersize = 5, label = label2)
+        x += math.cos(latitude) * math.cos(longitude)
+        y += math.cos(latitude) * math.sin(longitude)
+        z += math.sin(latitude)
 
-    # Add legend.
-    if legend:
-        base.legend(loc = 'lower right', bbox_to_anchor = (1, -0.25), fontsize = fontsize, markerscale = markerscale);
+    total = len(data)
+
+    x = x / total
+    y = y / total
+    z = z / total
+
+    central_longitude = math.atan2(y, x)
+    central_square_root = math.sqrt(x * x + y * y)
+    central_latitude = math.atan2(z, central_square_root)
+
+    mean_location = {
+        'latitude': math.degrees(central_latitude),
+        'longitude': math.degrees(central_longitude)
+        }
+
+    return mean_location
