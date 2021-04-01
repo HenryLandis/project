@@ -72,9 +72,8 @@ class Fetch:
             else:
                 break
         
-        # Normalize data and drop duplicates.
+        # Normalize data.
         self.data = pd.json_normalize(data)
-        self.data = self.data.drop_duplicates().reset_index(drop = True)
 
         # Subset key columns.
         self.data = self.data[[
@@ -84,4 +83,8 @@ class Fetch:
             "decimalLatitude",
             "decimalLongitude",
         ]]
+
+        # Drop duplicates.
+        self.data = self.data.drop_duplicates().reset_index(drop = True)
+        
         return self.data
