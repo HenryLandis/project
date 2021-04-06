@@ -6,49 +6,45 @@ The main API interface
 
 from sproc.fetch import Fetch
 from sproc.jsonify import GeographicRange
-from sproc.imap import SingleIMap
-
-
-# TODO: after making MultiIMap class object, revise this object to run either SingleIMap or MultiIMap depending
-# on the species input.  Maybe a run and multirun function?
+from sproc.imap import IMap
 
 
 class Sproc:
     def __init__(self, species, workdir=".", scalar=2.5):
-        # store inputs
+        # Store inputs.
         self.species = species
         self.workdir = workdir
 
-        # to be filled (dataframe, shapely [Multi]Polygon, folium map)
+        # Placeholders for dataframe, shapely [Multi]Polygon, folium map
         self.data = None
         self.georange = None
         self.map = None
 
-        # generate results
+        # Generate results.
         self._run(scalar)
 
 
     def _run(self, outlier_scalar):
         """
-        Run internal functions
+        Run internal functions.
         """
-        records = Fetch(species=self.species)
+        records = Fetch(species = self.species)
         georange = GeographicRange(
-            data=records.data, 
-            name=self.species,
-            workdir=self.workdir,
-            scalar=outlier_scalar,
+            data = records.data, 
+            name = self.species,
+            workdir = self.workdir,
+            scalar = outlier_scalar,
         )
         self.data = records.data
         self.georange = georange.georange
-        self.map = SingleIMap(georange.json_file).imap
+        self.map = IMap(georange.json_file).imap
 
 
     def __repr__(self):
         _data = [
             "<Sproc ",
-            f"spp='{self.species}', ",
-            f"occs={self.data.shape[0]}, ",
-            f"range_area={self.georange.area:.2f}/>",
+            f"spp = '{self.species}', ",
+            f"occs = {self.data.shape[0]}, ",
+            f"range_area = {self.georange.area:.2f}/>",
         ]
         return "".join(_data)
