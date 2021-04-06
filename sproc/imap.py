@@ -4,15 +4,17 @@
 Draw maps with folium
 """
 
+import pandas as pd
 import os
+import geopandas as gpd
 import folium
-import geopandas
 
 
-# TODO: make MultiIMap object, to compare with original (renamed SingleIMap).
+# Make dataframes have wider columns for neatness.
+pd.set_option("max_colwidth", 14)
 
 
-class SingleIMap:
+class IMap:
     """
     Parameters:
     ------------
@@ -20,12 +22,21 @@ class SingleIMap:
         LatLong Point as center of the map.
     zoom_start: 
     """
-    def __init__(self, json_file):
-        self.json_file = json_file
-        self.name = os.path.basename(self.json_file).rsplit(".json")[0]
-        self.data = geopandas.read_file(json_file)
+
+    def __init__(self, json_files):
+
+        # Differentiate between string filepath (ex: from jsonify.GeographicRange) or list of filepaths.
+        if type(json_files) == str:
+            self.json_files = [idx for idx in json_files.split(" ")]
+        elif type(json_files) == list:
+            self.json_files = json_files
+
+        # Other variables.
+        self.names = [os.path.basename(self.json_files[idx]).rsplit(".json")[0] for idx in range(len(self.json_files))]
+        self.data = [gpd.read_file(self.json_files[idx]) for idx in range(len(self.json_files))]
         self.imap = None
 
+        # Run internal functions.
         self._get_base_imap()
         self._add_poly()
         self._add_points()
@@ -33,15 +44,18 @@ class SingleIMap:
         self.imap.add_child(folium.LayerControl())
 
 
+    # TODO: in the future, consider best approach to allowing custom range merging.  Maybe at file level?
+    # Adding points here might require resetting the whole polygon from jsonify module.
     def add_geojson(self, json_file):
         """
-        Add GeoJson data from another sproc geojson file to this map.
+        Add GeoJSON data from another sproc GeoJSON file to this map.
         This can be used to merge together bounds and points from two
-        or more species.
+        or more species into a single polygon and point collection.
         """
+
         self.json_file = json_file
         self.name = os.path.basename(self.json_file).rsplit(".json")[0]
-        self.data = geopandas.read_file(json_file)
+        self.data = gpd.read_file(json_file)
 
         # self._add_poly()
         self._add_points()
@@ -53,9 +67,9 @@ class SingleIMap:
 
     def _get_base_imap(self):
         """
-        Load a basemap 
+        Load a basemap.
         """
-        # create the baselayer map
+        # Create the baselayer map.
         self.imap = folium.Map()
         # tiles='Stamen Terrain'
         # tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png',
@@ -64,68 +78,83 @@ class SingleIMap:
 
     def _add_poly(self):
         """
-        Adds a MultiPolygon for the geographic range on its own layer
+        Adds a MultiPolygon for the geographic range on its own layer.
         """
-        # make a layer for the polygon shape
-        layer_poly = folium.FeatureGroup(name=f"{self.name} bounds")
-        
-        # add the polygon to this layer
-        layer_poly.add_child(
-            folium.GeoJson(
-                data=self.data[self.data['type']=="geographic_range"])
-        )
 
-        # add this layer to the map
-        self.imap.add_child(layer_poly)
-        # self.imap.fit_bounds(layer_poly.get_bounds())
+        # Iterate over GeoJSON files.
+        for idx in range(len(self.json_files)):
+
+            # Make a layer for the polygon.
+            layer_poly = folium.FeatureGroup(name = f"{self.names[idx]} bounds")
+        
+            # Add the polygon to this layer.
+            layer_poly.add_child(
+                folium.GeoJson(
+                    data = self.data[idx][self.data[idx]['type'] == "geographic_range"])
+            )
+
+            # Add this layer to the map.
+            self.imap.add_child(layer_poly)
+            # self.imap.fit_bounds(layer_poly.get_bounds())
+
+        # Add lat/long popover function.
+        # self.imap.add_child(folium.LatLngPopup())
 
 
     def _add_points(self):
         """
-        Adds markers for occurrence points on a separate layer
+        Adds markers for occurrence points on a separate layer.
         """
-        # make a layer for points
-        layer_points = folium.FeatureGroup(name=f"{self.name} occurrence")
 
-        # get points as markers
-        mask1 = self.data['type'] == "occurrence"
-        mask2 = self.data['outlier'] == 'false'
-        markers = folium.GeoJson(
-            data=self.data[mask1 & mask2],
-            popup=folium.GeoJsonPopup(fields=("record",), aliases=("",)),
-        )
+        # Iterate over GeoJSON files.
+        for idx in range(len(self.json_files)):
 
-        # add markers to layer
-        layer_points.add_child(markers)
+            # Make a layer for points.
+            layer_points = folium.FeatureGroup(name = f"{self.names[idx]} occurrences")
+
+            # Get points as markers.
+            mask1 = self.data[idx]['type'] == "occurrence"
+            mask2 = self.data[idx]['outlier'] == 'false'
+            markers = folium.GeoJson(
+                data = self.data[idx][mask1 & mask2],
+                popup = folium.GeoJsonPopup(fields = ("record",), aliases = ("",)),
+            )
+
+            # Add markers to layer.
+            layer_points.add_child(markers)
         
-        # add this layer to the map
-        self.imap.add_child(layer_points)
+            # Add this layer to the map.
+            self.imap.add_child(layer_points)
 
 
     def _add_outlier_points(self):
         """
-        Adds outliers as Points in red color
+        Adds outliers as points in red color.
         """
-        # skip if no outliers present
-        if all(self.data[self.data['type'] == 'occurrence'].outlier == "false"):
-            return 
 
-        # make a layer for points
-        layer_outliers = folium.FeatureGroup(name="Outliers")
+        # Iterate over GeoJSON files.
+        for idx in range(len(self.json_files)):
 
-        # get points as markers
-        mask1 = self.data['type'] == "occurrence"
-        mask2 = self.data['outlier'] == 'true'
-        markers = folium.GeoJson(
-            data=self.data[mask1 & mask2],
-            popup=folium.GeoJsonPopup(fields=("record",), aliases=("",)),
-            marker=folium.Marker(
-                icon=folium.Icon(color="red", icon="trash")
+            # Skip if there are no outliers.
+            if all(self.data[idx][self.data[idx]['type'] == 'occurrence'].outlier == "false"):
+                pass 
+
+            # Make a layer for outliers.
+            layer_outliers = folium.FeatureGroup(name = f"{self.names[idx]} Outliers")
+
+            # Get outliers as markers.
+            mask1 = self.data[idx]['type'] == "occurrence"
+            mask2 = self.data[idx]['outlier'] == 'true'
+            markers = folium.GeoJson(
+                data = self.data[idx][mask1 & mask2],
+                popup = folium.GeoJsonPopup(fields = ("record",), aliases = ("",)),
+                marker = folium.Marker(
+                    icon = folium.Icon(color = "red", icon = "trash")
+                )
             )
-        )
 
-        # add markers to layer
-        layer_outliers.add_child(markers)
+            # Add outliers to layer.
+            layer_outliers.add_child(markers)
         
-        # add this layer to the map
-        self.imap.add_child(layer_outliers)
+            # Add layer to map.
+            self.imap.add_child(layer_outliers)
