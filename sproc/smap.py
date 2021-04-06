@@ -14,17 +14,14 @@ import numpy as np
 pd.set_option("max_colwidth", 14)
 
 
-# TODO: like for interactive mapping, make MultiSMap.
-
-
 class SingleSMap:
-    '''
-    Functions for static mapping of occurrence data with matplotlib/contextily.
-    '''
+    """
+    Class for static mapping of occurrence data for a single taxon with matplotlib/contextily.
+    """
 
     def __init__(self, json_file):
         self.json_file = json_file
-        self.name = os.path.basename(self.json_file).rsplit(".json")[0]
+        # self.name = os.path.basename(self.json_file).rsplit(".json")[0]
         self.data = gpd.read_file(json_file)
 
 
@@ -64,7 +61,7 @@ class SingleSMap:
         plt.colorbar(cm.ScalarMappable(norm = None, cmap = cmap), ax = ax, cax = cax)
 
         # Remove axes.
-        ax.set_axis_off()
+        # ax.set_axis_off()
 
 
     def recmap(self, figsize = (12, 9), bins = 10, cmin = None, cmax = None, alpha = 0.5, cmap = 'viridis_r'):
@@ -106,7 +103,7 @@ class SingleSMap:
         plt.colorbar(cm.ScalarMappable(norm = None, cmap = cmap), ax = ax, cax = cax)
 
         # Remove axes.
-        ax.set_axis_off()
+        # ax.set_axis_off()
 
 
     def kdemap(self, figsize = (12, 9), levels = 50, alpha = 0.5, cmap = 'viridis_r'):
@@ -147,13 +144,13 @@ class SingleSMap:
         plt.colorbar(cm.ScalarMappable(norm = None, cmap = cmap), ax = ax, cax = cax)
 
         # Remove axes.
-        ax.set_axis_off()
+        # ax.set_axis_off()
 
 
     def worldmap(self, figsize = (30, 30)):
-        '''
+        """
         View worldwide occurrence data on a simple static map.
-        '''
+        """
 
         # Get world map from geopandas.
         world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
@@ -166,3 +163,69 @@ class SingleSMap:
 
         # Plot occurrence data.
         gdf.plot(ax = base, marker = 'o', color = 'red', markersize = 2)
+
+
+class MultiSMap:
+    """
+    Class for static mapping of occurrence data for multiple taxa with matplotlib/contextily.
+    """
+
+    def __init__(self, json_files):
+                
+        # Differentiate between string filepath (ex: from jsonify.GeographicRange) or list of filepaths.
+        if type(json_files) == str:
+            self.json_files = [idx for idx in json_files.split(" ")]
+        elif type(json_files) == list:
+            self.json_files = json_files
+
+        # Other variables.
+        self.names = [os.path.basename(self.json_files[idx]).rsplit(".json")[0] for idx in range(len(self.json_files))]
+        self.data = [gpd.read_file(self.json_files[idx]) for idx in range(len(self.json_files))]
+
+    
+    def plot_two_polygons_intersection(self, figsize = (12, 9), alpha = 0.5):
+        """
+        Plot the intersection of two polygons built from latitue/longitude occurrence data.
+        Expects a list of exactly two GeoJSON files.
+        """
+        
+        # Get geographic ranges.
+        gdf_0 = self.data[0][(self.data[0]["type"] == "geographic_range")]
+        gdf_1 = self.data[1][(self.data[1]["type"] == "geographic_range")]
+
+        # Get intersection by overlaying dataframes.
+        isn = gpd.tools.overlay(gdf_0, gdf_1, 'intersection')
+
+        # Add axis and basemap, converting tilemap from Web Mercator to WGS84.
+        ax = isn.plot(figsize = figsize, alpha = alpha)
+        cx.add_basemap(
+            ax,
+            crs = gdf_0.crs.to_string(),
+            source = cx.providers.OpenStreetMap.Mapnik
+        )
+
+
+    def plot_many_polygons(self, figsize = (12, 9), alpha = 0.5):
+        """
+        Input a list of GeoJSON files and generate a static polygon map
+        from each.
+        """
+
+        # Set up figures and axis.
+        f, axs = plt.subplots(nrows = len(self.json_files), figsize = figsize)
+
+        # Iterate over list of GeoJSON files.
+        for idx in range(len(self.json_files)):
+
+            # Get geographic range.
+            gdf = self.data[idx][(self.data[idx]["type"] == "geographic_range")]
+
+            # Plot range on unique axis.
+            gdf.plot(ax = axs[idx], figsize = figsize, alpha = alpha)
+
+            # Add basemap, converting tilemap from Web Mercator to WGS84.
+            cx.add_basemap(
+                axs[idx],
+                crs = gdf.crs.to_string(),
+                source = cx.providers.OpenStreetMap.Mapnik
+            )
