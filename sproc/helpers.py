@@ -1,15 +1,14 @@
 #!/usr/env/bin python
 
 """
-random utilities 
+Utility functions.
 """
-
 
 import sys
 from loguru import logger
 
 
-# logger will show time, function name, and message.
+# Logger will show time, function name, and message.
 LOGFORMAT = (
     "{time:hh:mm} | {level: <7} | "
     "<b><magenta>{function: <15}</magenta></b> | "
@@ -17,7 +16,7 @@ LOGFORMAT = (
 )
 
 
-# colorize the logger if stdout is IPython/Jupyter or a terminal (TTY)
+# Colorize the logger if stdout is IPython/Jupyter or a terminal (TTY).
 try:
     import IPython
     TTY1 = bool(IPython.get_ipython())
