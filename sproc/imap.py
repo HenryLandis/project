@@ -8,6 +8,7 @@ import pandas as pd
 import os
 import geopandas as gpd
 import folium
+from sproc.globals import COLORS, OUTLIERS
 
 
 # Make dataframes have wider columns for neatness.
@@ -118,6 +119,9 @@ class IMap:
             markers = folium.GeoJson(
                 data = self.data[idx][mask1 & mask2],
                 popup = folium.GeoJsonPopup(fields = ("record",), aliases = ("",)),
+                marker = folium.Marker(
+                    icon = folium.Icon(color = COLORS[idx])
+                )
             )
 
             # Add markers to layer.
@@ -140,7 +144,7 @@ class IMap:
                 pass 
 
             # Make a layer for outliers.
-            layer_outliers = folium.FeatureGroup(name = f"{self.names[idx]} Outliers")
+            layer_outliers = folium.FeatureGroup(name = f"{self.names[idx]} outliers")
 
             # Get outliers as markers.
             mask1 = self.data[idx]['type'] == "occurrence"
@@ -149,7 +153,7 @@ class IMap:
                 data = self.data[idx][mask1 & mask2],
                 popup = folium.GeoJsonPopup(fields = ("record",), aliases = ("",)),
                 marker = folium.Marker(
-                    icon = folium.Icon(color = "red", icon = "trash")
+                    icon = folium.Icon(color = OUTLIERS[idx], icon = "trash")
                 )
             )
 
