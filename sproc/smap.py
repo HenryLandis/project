@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+"""
+Draw maps with matplotlib and contextily.
+"""
+
 import pandas as pd
 import os
 import geopandas as gpd
