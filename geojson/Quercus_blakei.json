@@ -1,0 +1,2444 @@
+{
+    "type": "FeatureCollection",
+    "properties": {
+        "name": "Quercus blakei"
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.006265,
+                    24.388378
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030917826 target='_blank'>https://www.gbif.org/occurrence/1030917826</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.05,
+                    21.61
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417274336 target='_blank'>https://www.gbif.org/occurrence/2417274336</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.56,
+                    11.31
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417268322 target='_blank'>https://www.gbif.org/occurrence/2417268322</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.235565,
+                    24.175587
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985166 target='_blank'>https://www.gbif.org/occurrence/1030985166</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.926496,
+                    25.03299
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985100 target='_blank'>https://www.gbif.org/occurrence/1030985100</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985114 target='_blank'>https://www.gbif.org/occurrence/1030985114</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.080663,
+                    24.567694
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985088 target='_blank'>https://www.gbif.org/occurrence/1030985088</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.957979,
+                    22.097768
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985110 target='_blank'>https://www.gbif.org/occurrence/1030985110</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.957979,
+                    22.097768
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985145 target='_blank'>https://www.gbif.org/occurrence/1030985145</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    113.671053,
+                    23.651079
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985178 target='_blank'>https://www.gbif.org/occurrence/1030985178</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.26,
+                    22.2
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417588182 target='_blank'>https://www.gbif.org/occurrence/2417588182</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.19,
+                    23.93
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417589312 target='_blank'>https://www.gbif.org/occurrence/2417589312</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.352269,
+                    24.547767
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985108 target='_blank'>https://www.gbif.org/occurrence/1030985108</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.207192,
+                    22.75506
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985120 target='_blank'>https://www.gbif.org/occurrence/1030985120</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.352269,
+                    24.547767
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985134 target='_blank'>https://www.gbif.org/occurrence/1030985134</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.352269,
+                    24.547767
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985149 target='_blank'>https://www.gbif.org/occurrence/1030985149</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.352269,
+                    24.547767
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985174 target='_blank'>https://www.gbif.org/occurrence/1030985174</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.080663,
+                    24.567694
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030666011 target='_blank'>https://www.gbif.org/occurrence/1030666011</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.266023,
+                    23.25013
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985139 target='_blank'>https://www.gbif.org/occurrence/1030985139</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.264143,
+                    22.238806
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985156 target='_blank'>https://www.gbif.org/occurrence/1030985156</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.264143,
+                    22.238806
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985159 target='_blank'>https://www.gbif.org/occurrence/1030985159</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.266023,
+                    23.25013
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985165 target='_blank'>https://www.gbif.org/occurrence/1030985165</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030832387 target='_blank'>https://www.gbif.org/occurrence/1030832387</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030832726 target='_blank'>https://www.gbif.org/occurrence/1030832726</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030832762 target='_blank'>https://www.gbif.org/occurrence/1030832762</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985130 target='_blank'>https://www.gbif.org/occurrence/1030985130</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985131 target='_blank'>https://www.gbif.org/occurrence/1030985131</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985142 target='_blank'>https://www.gbif.org/occurrence/1030985142</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.7,
+                    18.62
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417323546 target='_blank'>https://www.gbif.org/occurrence/2417323546</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.7,
+                    18.62
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417323705 target='_blank'>https://www.gbif.org/occurrence/2417323705</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.56,
+                    11.31
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417748822 target='_blank'>https://www.gbif.org/occurrence/2417748822</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.56,
+                    11.31
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417752831 target='_blank'>https://www.gbif.org/occurrence/2417752831</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.876746,
+                    22.082121
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985090 target='_blank'>https://www.gbif.org/occurrence/1030985090</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.876746,
+                    22.082121
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985115 target='_blank'>https://www.gbif.org/occurrence/1030985115</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    115.650136,
+                    24.95476
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030746594 target='_blank'>https://www.gbif.org/occurrence/1030746594</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.571599,
+                    24.130051
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985158 target='_blank'>https://www.gbif.org/occurrence/1030985158</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.571599,
+                    24.130051
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985176 target='_blank'>https://www.gbif.org/occurrence/1030985176</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.997805,
+                    21.741852
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856127 target='_blank'>https://www.gbif.org/occurrence/1303856127</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.997805,
+                    21.741852
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856190 target='_blank'>https://www.gbif.org/occurrence/1303856190</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.997805,
+                    21.741852
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303857578 target='_blank'>https://www.gbif.org/occurrence/1303857578</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.957979,
+                    22.097768
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303869812 target='_blank'>https://www.gbif.org/occurrence/1303869812</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030995833 target='_blank'>https://www.gbif.org/occurrence/1030995833</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.01208,
+                    21.53888
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731795251 target='_blank'>https://www.gbif.org/occurrence/731795251</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030665969 target='_blank'>https://www.gbif.org/occurrence/1030665969</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985147 target='_blank'>https://www.gbif.org/occurrence/1030985147</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985152 target='_blank'>https://www.gbif.org/occurrence/1030985152</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755837 target='_blank'>https://www.gbif.org/occurrence/1303755837</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755868 target='_blank'>https://www.gbif.org/occurrence/1303755868</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856266 target='_blank'>https://www.gbif.org/occurrence/1303856266</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.17663,
+                    18.745108
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856418 target='_blank'>https://www.gbif.org/occurrence/1303856418</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303857593 target='_blank'>https://www.gbif.org/occurrence/1303857593</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.6944,
+                    18.64028
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731824325 target='_blank'>https://www.gbif.org/occurrence/731824325</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.6994,
+                    18.6402
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731795245 target='_blank'>https://www.gbif.org/occurrence/731795245</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.6994,
+                    18.6402
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731795244 target='_blank'>https://www.gbif.org/occurrence/731795244</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985111 target='_blank'>https://www.gbif.org/occurrence/1030985111</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985122 target='_blank'>https://www.gbif.org/occurrence/1030985122</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985123 target='_blank'>https://www.gbif.org/occurrence/1030985123</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985137 target='_blank'>https://www.gbif.org/occurrence/1030985137</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985146 target='_blank'>https://www.gbif.org/occurrence/1030985146</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985148 target='_blank'>https://www.gbif.org/occurrence/1030985148</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755792 target='_blank'>https://www.gbif.org/occurrence/1303755792</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755815 target='_blank'>https://www.gbif.org/occurrence/1303755815</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856278 target='_blank'>https://www.gbif.org/occurrence/1303856278</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856458 target='_blank'>https://www.gbif.org/occurrence/1303856458</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303857362 target='_blank'>https://www.gbif.org/occurrence/1303857362</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.700342,
+                    18.626309
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303857558 target='_blank'>https://www.gbif.org/occurrence/1303857558</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.6434,
+                    18.85
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731796578 target='_blank'>https://www.gbif.org/occurrence/731796578</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985092 target='_blank'>https://www.gbif.org/occurrence/1030985092</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.511923,
+                    18.252625
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985094 target='_blank'>https://www.gbif.org/occurrence/1030985094</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985117 target='_blank'>https://www.gbif.org/occurrence/1030985117</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985118 target='_blank'>https://www.gbif.org/occurrence/1030985118</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.029085,
+                    18.516726
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985138 target='_blank'>https://www.gbif.org/occurrence/1030985138</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755874 target='_blank'>https://www.gbif.org/occurrence/1303755874</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303855978 target='_blank'>https://www.gbif.org/occurrence/1303855978</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303855994 target='_blank'>https://www.gbif.org/occurrence/1303855994</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856067 target='_blank'>https://www.gbif.org/occurrence/1303856067</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856121 target='_blank'>https://www.gbif.org/occurrence/1303856121</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.957979,
+                    22.097768
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856151 target='_blank'>https://www.gbif.org/occurrence/1303856151</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.029085,
+                    18.516726
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303857318 target='_blank'>https://www.gbif.org/occurrence/1303857318</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.504134,
+                    18.252013
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303857350 target='_blank'>https://www.gbif.org/occurrence/1303857350</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.029085,
+                    18.516726
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303857490 target='_blank'>https://www.gbif.org/occurrence/1303857490</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.15964,
+                    18.38613
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731795246 target='_blank'>https://www.gbif.org/occurrence/731795246</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.20273,
+                    18.35974
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731795247 target='_blank'>https://www.gbif.org/occurrence/731795247</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.9949,
+                    22.9183
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731796568 target='_blank'>https://www.gbif.org/occurrence/731796568</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.092,
+                    21.941
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731832470 target='_blank'>https://www.gbif.org/occurrence/731832470</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.3288,
+                    20.0307
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731796577 target='_blank'>https://www.gbif.org/occurrence/731796577</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.511923,
+                    18.252625
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985107 target='_blank'>https://www.gbif.org/occurrence/1030985107</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.957979,
+                    22.097768
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985127 target='_blank'>https://www.gbif.org/occurrence/1030985127</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.511923,
+                    18.252625
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985128 target='_blank'>https://www.gbif.org/occurrence/1030985128</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.504134,
+                    18.252013
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856228 target='_blank'>https://www.gbif.org/occurrence/1303856228</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.957979,
+                    22.097768
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856251 target='_blank'>https://www.gbif.org/occurrence/1303856251</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.511923,
+                    18.252625
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856289 target='_blank'>https://www.gbif.org/occurrence/1303856289</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.511923,
+                    18.252625
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303857439 target='_blank'>https://www.gbif.org/occurrence/1303857439</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.504134,
+                    18.252013
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303857516 target='_blank'>https://www.gbif.org/occurrence/1303857516</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.857716,
+                    21.653918
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303883054 target='_blank'>https://www.gbif.org/occurrence/1303883054</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.891426,
+                    39.441455
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1304128300 target='_blank'>https://www.gbif.org/occurrence/1304128300</a>",
+                "outlier": "true"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.30556,
+                    19.48583
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731796580 target='_blank'>https://www.gbif.org/occurrence/731796580</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.35447,
+                    19.68299
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731824552 target='_blank'>https://www.gbif.org/occurrence/731824552</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985124 target='_blank'>https://www.gbif.org/occurrence/1030985124</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985200 target='_blank'>https://www.gbif.org/occurrence/1030985200</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755880 target='_blank'>https://www.gbif.org/occurrence/1303755880</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755889 target='_blank'>https://www.gbif.org/occurrence/1303755889</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856083 target='_blank'>https://www.gbif.org/occurrence/1303856083</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856139 target='_blank'>https://www.gbif.org/occurrence/1303856139</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856837 target='_blank'>https://www.gbif.org/occurrence/1303856837</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303857331 target='_blank'>https://www.gbif.org/occurrence/1303857331</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.891426,
+                    39.441455
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1304128355 target='_blank'>https://www.gbif.org/occurrence/1304128355</a>",
+                "outlier": "true"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.891426,
+                    39.441455
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1304128360 target='_blank'>https://www.gbif.org/occurrence/1304128360</a>",
+                "outlier": "true"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985101 target='_blank'>https://www.gbif.org/occurrence/1030985101</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985126 target='_blank'>https://www.gbif.org/occurrence/1030985126</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985141 target='_blank'>https://www.gbif.org/occurrence/1030985141</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985150 target='_blank'>https://www.gbif.org/occurrence/1030985150</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985172 target='_blank'>https://www.gbif.org/occurrence/1030985172</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755839 target='_blank'>https://www.gbif.org/occurrence/1303755839</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755863 target='_blank'>https://www.gbif.org/occurrence/1303755863</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755898 target='_blank'>https://www.gbif.org/occurrence/1303755898</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755901 target='_blank'>https://www.gbif.org/occurrence/1303755901</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755905 target='_blank'>https://www.gbif.org/occurrence/1303755905</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856120 target='_blank'>https://www.gbif.org/occurrence/1303856120</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856146 target='_blank'>https://www.gbif.org/occurrence/1303856146</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    116.562386,
+                    11.318545
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856369 target='_blank'>https://www.gbif.org/occurrence/1303856369</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856805 target='_blank'>https://www.gbif.org/occurrence/1303856805</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303870042 target='_blank'>https://www.gbif.org/occurrence/1303870042</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303883048 target='_blank'>https://www.gbif.org/occurrence/1303883048</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.031652,
+                    22.446542
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303883056 target='_blank'>https://www.gbif.org/occurrence/1303883056</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    113.045465,
+                    23.688233
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985113 target='_blank'>https://www.gbif.org/occurrence/1030985113</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    113.045465,
+                    23.688233
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755883 target='_blank'>https://www.gbif.org/occurrence/1303755883</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    113.045465,
+                    23.688233
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755900 target='_blank'>https://www.gbif.org/occurrence/1303755900</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    113.045465,
+                    23.688233
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755921 target='_blank'>https://www.gbif.org/occurrence/1303755921</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    113.045465,
+                    23.688233
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856260 target='_blank'>https://www.gbif.org/occurrence/1303856260</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.462487,
+                    23.519195
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755849 target='_blank'>https://www.gbif.org/occurrence/1303755849</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.462487,
+                    23.519195
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755875 target='_blank'>https://www.gbif.org/occurrence/1303755875</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.044025,
+                    22.929376
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755911 target='_blank'>https://www.gbif.org/occurrence/1303755911</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.044025,
+                    22.929376
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856060 target='_blank'>https://www.gbif.org/occurrence/1303856060</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.03962,
+                    22.91737
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731796570 target='_blank'>https://www.gbif.org/occurrence/731796570</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.49088,
+                    22.69329
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731832471 target='_blank'>https://www.gbif.org/occurrence/731832471</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.0,
+                    15.0
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731795252 target='_blank'>https://www.gbif.org/occurrence/731795252</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.0,
+                    15.0
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731824326 target='_blank'>https://www.gbif.org/occurrence/731824326</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.044025,
+                    22.929376
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985112 target='_blank'>https://www.gbif.org/occurrence/1030985112</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.044025,
+                    22.929376
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030985136 target='_blank'>https://www.gbif.org/occurrence/1030985136</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.462487,
+                    23.519195
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755845 target='_blank'>https://www.gbif.org/occurrence/1303755845</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.462487,
+                    23.519195
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755884 target='_blank'>https://www.gbif.org/occurrence/1303755884</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.462487,
+                    23.519195
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303755895 target='_blank'>https://www.gbif.org/occurrence/1303755895</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.044025,
+                    22.929376
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856113 target='_blank'>https://www.gbif.org/occurrence/1303856113</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.569982,
+                    22.768327
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1303856798 target='_blank'>https://www.gbif.org/occurrence/1303856798</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.310905,
+                    22.653799
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1304128338 target='_blank'>https://www.gbif.org/occurrence/1304128338</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.7016,
+                    18.89699
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/437332196 target='_blank'>https://www.gbif.org/occurrence/437332196</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    114.15652,
+                    22.2777
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/437664045 target='_blank'>https://www.gbif.org/occurrence/437664045</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.77054,
+                    21.07579
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731795255 target='_blank'>https://www.gbif.org/occurrence/731795255</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.7705,
+                    21.076
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731832218 target='_blank'>https://www.gbif.org/occurrence/731832218</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.7016,
+                    18.89699
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731795248 target='_blank'>https://www.gbif.org/occurrence/731795248</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "MultiPolygon",
+                "coordinates": [
+                    [
+                        [
+                            [
+                                109.224605,
+                                13.87322
+                            ],
+                            [
+                                106.0,
+                                15.0
+                            ],
+                            [
+                                106.002395,
+                                18.589221
+                            ],
+                            [
+                                106.42688,
+                                18.004089
+                            ],
+                            [
+                                107.361877,
+                                16.69751
+                            ],
+                            [
+                                108.26947,
+                                16.079712
+                            ],
+                            [
+                                108.877075,
+                                15.276672
+                            ],
+                            [
+                                109.224605,
+                                13.87322
+                            ]
+                        ]
+                    ],
+                    [
+                        [
+                            [
+                                106.003263,
+                                19.88988
+                            ],
+                            [
+                                106.006265,
+                                24.388378
+                            ],
+                            [
+                                109.926496,
+                                25.03299
+                            ],
+                            [
+                                115.650136,
+                                24.95476
+                            ],
+                            [
+                                115.796076,
+                                22.773258
+                            ],
+                            [
+                                114.763916,
+                                22.668091
+                            ],
+                            [
+                                114.152527,
+                                22.223877
+                            ],
+                            [
+                                113.806885,
+                                22.548279
+                            ],
+                            [
+                                113.241089,
+                                22.051514
+                            ],
+                            [
+                                111.843689,
+                                21.550476
+                            ],
+                            [
+                                110.785522,
+                                21.397278
+                            ],
+                            [
+                                110.444092,
+                                20.341125
+                            ],
+                            [
+                                109.889893,
+                                20.282471
+                            ],
+                            [
+                                109.627686,
+                                21.008301
+                            ],
+                            [
+                                109.864502,
+                                21.395081
+                            ],
+                            [
+                                108.522888,
+                                21.715271
+                            ],
+                            [
+                                108.050293,
+                                21.55249
+                            ],
+                            [
+                                106.715088,
+                                20.696899
+                            ],
+                            [
+                                106.003263,
+                                19.88988
+                            ]
+                        ]
+                    ],
+                    [
+                        [
+                            [
+                                110.339188,
+                                18.678395
+                            ],
+                            [
+                                109.47521,
+                                18.197701
+                            ],
+                            [
+                                108.655208,
+                                18.507682
+                            ],
+                            [
+                                108.626217,
+                                19.367888
+                            ],
+                            [
+                                109.119056,
+                                19.821039
+                            ],
+                            [
+                                110.211599,
+                                20.101254
+                            ],
+                            [
+                                110.786551,
+                                20.077534
+                            ],
+                            [
+                                111.010051,
+                                19.69593
+                            ],
+                            [
+                                110.570647,
+                                19.255879
+                            ],
+                            [
+                                110.339188,
+                                18.678395
+                            ]
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "type": "geographic_range"
+            }
+        }
+    ]
+}

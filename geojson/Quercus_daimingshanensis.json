@@ -1,0 +1,127 @@
+{
+    "type": "FeatureCollection",
+    "properties": {
+        "name": "Quercus daimingshanensis"
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.229301,
+                    23.226775
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030984729 target='_blank'>https://www.gbif.org/occurrence/1030984729</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.229301,
+                    23.226775
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030984739 target='_blank'>https://www.gbif.org/occurrence/1030984739</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    111.03045,
+                    25.465207
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030984743 target='_blank'>https://www.gbif.org/occurrence/1030984743</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.623457,
+                    23.496251
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030984701 target='_blank'>https://www.gbif.org/occurrence/1030984701</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.623457,
+                    23.496251
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030984732 target='_blank'>https://www.gbif.org/occurrence/1030984732</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.623457,
+                    23.496251
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030984733 target='_blank'>https://www.gbif.org/occurrence/1030984733</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            108.229301,
+                            23.226775
+                        ],
+                        [
+                            111.03045,
+                            25.465207
+                        ],
+                        [
+                            108.623457,
+                            23.496251
+                        ],
+                        [
+                            108.229301,
+                            23.226775
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "type": "geographic_range"
+            }
+        }
+    ]
+}

@@ -1,0 +1,312 @@
+{
+    "type": "FeatureCollection",
+    "properties": {
+        "name": "Quercus arbutifolia"
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.94,
+                    25.39
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417487344 target='_blank'>https://www.gbif.org/occurrence/2417487344</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    113.18,
+                    24.81
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417308167 target='_blank'>https://www.gbif.org/occurrence/2417308167</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    113.671053,
+                    23.651079
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/1030984849 target='_blank'>https://www.gbif.org/occurrence/1030984849</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    113.67,
+                    23.65
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417315555 target='_blank'>https://www.gbif.org/occurrence/2417315555</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.94,
+                    25.39
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417483216 target='_blank'>https://www.gbif.org/occurrence/2417483216</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.94,
+                    25.39
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/2417485670 target='_blank'>https://www.gbif.org/occurrence/2417485670</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.733,
+                    16.767
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/731390327 target='_blank'>https://www.gbif.org/occurrence/731390327</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.19579,
+                    12.2487
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/437319510 target='_blank'>https://www.gbif.org/occurrence/437319510</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.18987,
+                    12.24317
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/437984259 target='_blank'>https://www.gbif.org/occurrence/437984259</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.18987,
+                    12.24317
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/437984260 target='_blank'>https://www.gbif.org/occurrence/437984260</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.18987,
+                    12.24317
+                ]
+            },
+            "properties": {
+                "type": "occurrence",
+                "record": "<a href=https://www.gbif.org/occurrence/438317394 target='_blank'>https://www.gbif.org/occurrence/438317394</a>",
+                "outlier": "false"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "MultiPolygon",
+                "coordinates": [
+                    [
+                        [
+                            [
+                                109.18987,
+                                12.24317
+                            ],
+                            [
+                                106.733,
+                                16.767
+                            ],
+                            [
+                                107.023425,
+                                17.170469
+                            ],
+                            [
+                                107.361877,
+                                16.69751
+                            ],
+                            [
+                                108.26947,
+                                16.079712
+                            ],
+                            [
+                                108.877075,
+                                15.276672
+                            ],
+                            [
+                                109.335327,
+                                13.426086
+                            ],
+                            [
+                                109.256747,
+                                12.40401
+                            ],
+                            [
+                                109.19579,
+                                12.2487
+                            ],
+                            [
+                                109.18987,
+                                12.24317
+                            ]
+                        ]
+                    ],
+                    [
+                        [
+                            [
+                                109.680578,
+                                20.861887
+                            ],
+                            [
+                                112.94,
+                                25.39
+                            ],
+                            [
+                                113.671053,
+                                23.651079
+                            ],
+                            [
+                                113.010847,
+                                21.96896
+                            ],
+                            [
+                                111.843689,
+                                21.550476
+                            ],
+                            [
+                                110.785522,
+                                21.397278
+                            ],
+                            [
+                                110.444092,
+                                20.341125
+                            ],
+                            [
+                                109.889893,
+                                20.282471
+                            ],
+                            [
+                                109.680578,
+                                20.861887
+                            ]
+                        ]
+                    ],
+                    [
+                        [
+                            [
+                                110.339188,
+                                18.678395
+                            ],
+                            [
+                                109.47521,
+                                18.197701
+                            ],
+                            [
+                                108.655208,
+                                18.507682
+                            ],
+                            [
+                                108.626217,
+                                19.367888
+                            ],
+                            [
+                                109.119056,
+                                19.821039
+                            ],
+                            [
+                                110.211599,
+                                20.101254
+                            ],
+                            [
+                                110.786551,
+                                20.077534
+                            ],
+                            [
+                                111.010051,
+                                19.69593
+                            ],
+                            [
+                                110.570647,
+                                19.255879
+                            ],
+                            [
+                                110.339188,
+                                18.678395
+                            ]
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "type": "geographic_range"
+            }
+        }
+    ]
+}
