@@ -15,10 +15,13 @@ class Sproc:
         self.species = species
         self.workdir = workdir
 
-        # Placeholders for dataframe, shapely [Multi]Polygon, folium map
+        # Placeholders for dataframe, shapely [Multi]Polygon, folium map.
         self.data = None
         self.georange = None
         self.map = None
+
+        # Number of occurrences for species.
+        self.occs = None
 
         # Generate results.
         self._run(scalar)
@@ -38,6 +41,7 @@ class Sproc:
         self.data = records.data
         self.georange = georange.georange
         self.map = IMap(georange.json_file).imap
+        self.occs = self.data.shape[0]
 
 
     def __repr__(self):
