@@ -151,6 +151,26 @@ class SingleSMap:
         # ax.set_axis_off()
 
 
+    def plot_single_polygon(self, figsize = (12,9), alpha = 0.5):
+        """
+        Plot the geometric range polygon for occurrence data from a
+        single taxon.
+        """
+
+        # Get geographic range.
+        gdf = self.data[(self.data["type"] == "geographic_range")]
+
+        # Add axis and basemap, converting tilemap from Web Mercator to WGS84.
+        ax = gdf.plot(figsize = figsize, alpha = alpha)
+        cx.add_basemap(
+            ax,
+            crs = gdf.crs.to_string(),
+            source = cx.providers.OpenStreetMap.Mapnik
+        )
+
+
+
+
     def worldmap(self, figsize = (30, 30)):
         """
         View worldwide occurrence data on a simple static map.
