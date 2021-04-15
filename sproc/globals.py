@@ -20,23 +20,22 @@ LAND = shapely.geometry.MultiPolygon(
 )
 
 # Colors for folium icons.
-COLORS = ['blue', 
+COLORS = ['blue',
+'red',
 'green', 
-'purple', 
-'black', 
+'purple',
+'gray',
+'black',
+'white',
+'beige',
+'pink',
+'orange',
 'darkblue', 
+'darkred',
 'darkgreen', 
 'darkpurple', 
 'lightblue', 
-'lightgreen'
-] 
-OUTLIERS = ['red',
-'gray', 
-'beige', 
-'white'
-'pink', 
-'orange', 
-'darkred', 
-'lightred', 
+'lightred',
+'lightgreen',
 'lightgray'
 ]

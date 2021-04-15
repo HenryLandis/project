@@ -8,7 +8,7 @@ import pandas as pd
 import os
 import geopandas as gpd
 import folium
-from sproc.globals import COLORS, OUTLIERS
+from sproc.globals import COLORS
 
 
 # Make dataframes have wider columns for neatness.
@@ -133,7 +133,7 @@ class IMap:
 
     def _add_outlier_points(self):
         """
-        Adds outliers as points in red color.
+        Adds outliers marked with a trash icon.
         """
 
         # Iterate over GeoJSON files.
@@ -153,7 +153,7 @@ class IMap:
                 data = self.data[idx][mask1 & mask2],
                 popup = folium.GeoJsonPopup(fields = ("record",), aliases = ("",)),
                 marker = folium.Marker(
-                    icon = folium.Icon(color = OUTLIERS[idx], icon = "trash")
+                    icon = folium.Icon(color = COLORS[idx], icon = "trash")
                 )
             )
 
