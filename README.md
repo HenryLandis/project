@@ -43,4 +43,4 @@ pip install -e .
 
 ### Working example
 
-Read the [working example notebook](https://nbviewer.jupyter.org/github/HenryLandis/sproc/blob/main/notebooks/working-example.ipynb) for an overview of the ``sproc`` workflow and functionality.
+Check out the [working example notebook](https://nbviewer.jupyter.org/github/HenryLandis/sproc/blob/main/notebooks/working-example.ipynb) for an overview of the ``sproc`` workflow and functionality.  The working example covers querying, formatting, static plotting and interactive plotting steps.
