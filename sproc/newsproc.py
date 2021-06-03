@@ -38,7 +38,7 @@ class Sproc:
             workdir = self.workdir,
             scalar = outlier_scalar,
         )
-        self.data = records.data
+        self.data = georange.data
         self.georange = georange.georange
         self.map = IMap(georange.json_file).imap
         self.occs = self.data.shape[0]
